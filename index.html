@@ -16,7 +16,7 @@
         <section id="video-list">
             <h2>Lista de Vídeos</h2>
             <ul id="videos">
-                <li onclick="playVideo(this)"
+                <li onclick="playVideo(this)" 
                     data-src="/Videos/video1/video1.mp4"
                     data-title="Cena secreta do modo zombie Call of Duty Black Ops 6 em 4K"
                     data-canal="GamesClips"
@@ -24,7 +24,7 @@
                     <a href="https://www.youtube.com/watch?v=fYKgtvQ38Ig&t=1s" target="_blank">Link do vídeo</a><br>
                     <img src="/Videos/video1/BO.png" alt="">
                     <p>Canal: GamesClips</p>
-                    <p>Descrição: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa reprehenderit ut assumenda unde ullam iusto deserunt cum nemo officiis nihil ad ratione, adipisci atque, vero eius labore pariatur tenetur sunt?</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
                 </li>
 
                 <li onclick="playVideo(this)"
@@ -35,7 +35,7 @@
                     <a href="https://www.youtube.com/watch?v=M23Ho__KGMA" target="_blank">Link do vídeo</a><br>
                     <img src="/Videos/video2/C+.png" alt="">
                     <p>Canal: Jarvis BR</p>
-                    <p>Descrição: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa reprehenderit ut assumenda unde ullam iusto deserunt cum nemo officiis nihil ad ratione, adipisci atque, vero eius labore pariatur tenetur sunt?</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
                 </li>
 
                 <li onclick="playVideo(this)"
@@ -46,7 +46,7 @@
                     <a href="https://www.youtube.com/watch?v=vkkoqF8tvqU" target="_blank">Link do vídeo</a><br>
                     <img src="/Videos/video3/world.png" alt="">
                     <p>Canal: A World without</p>
-                    <p>Descrição: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa reprehenderit ut assumenda unde ullam iusto deserunt cum nemo officiis nihil ad ratione, adipisci atque, vero eius labore pariatur tenetur sunt?</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
                 </li>
 
                 <li onclick="playVideo(this)"
@@ -57,7 +57,7 @@
                     <a href="https://www.youtube.com/watch?v=ctcAM6abIKw&t=45s" target="_blank">Link do vídeo</a><br>
                     <img src="/Videos/video4/monitor.png" alt="">
                     <p>Canal: Zharir</p>
-                    <p>Descrição: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa reprehenderit ut assumenda unde ullam iusto deserunt cum nemo officiis nihil ad ratione, adipisci atque, vero eius labore pariatur tenetur sunt?</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
                 </li>
 
                 <li onclick="playVideo(this)"
@@ -68,17 +68,31 @@
                     <a href="https://www.youtube.com/watch?v=VGmf4ludfH0" target="_blank">Link do vídeo</a><br>
                     <img src="/Videos/video5/LucasMontano.png" alt="">
                     <p>Canal: Lucas Montano</p>
-                    <p>Descrição: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa reprehenderit ut assumenda unde ullam iusto deserunt cum nemo officiis nihil ad ratione, adipisci atque, vero eius labore pariatur tenetur sunt?</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
                 </li>
             </ul>
         </section>
 
         <section class="video-player">
             <h2 id="video-title">Clique em um vídeo para assistir</h2>
+
+            <!-- Player principal -->
             <video id="player" controls>
                 <source id="video-source" src="" type="video/mp4">
                 Seu navegador não suporta o elemento de vídeo.
             </video>
+
+            <!-- 🔹 Seletor de resolução -->
+            <div id="res-selector" style="margin-top: 10px;">
+                <label for="resolution">Resolução:</label>
+                <select id="resolution" onchange="changeResolution()">
+                    <option value="360p">360p</option>
+                    <option value="480p">480p</option>
+                    <option value="720p" selected>720p</option>
+                    <option value="1080p">1080p</option>
+                </select>
+            </div>
+
             <div id="video-info"></div>
         </section>
     </main>
